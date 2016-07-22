@@ -1,0 +1,36 @@
+{
+  "name": "mocklint",
+  "version": "0.0.1",
+  "description": "Validate the JSON file and javascript file",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "files=`git diff --staged --name-only --diff-filter=ACMRTU | grep -ie '\\.js$'`; if [ \"${files:=empty}\" != \"empty\" ]; then eslint -c .eslintrc.json $files; fi",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunnychuai/mocklint.git"
+  },
+  "keywords": [
+    "check",
+    "validate",
+    "filename",
+    "pathname"
+  ],
+  "author": "sunnychuai <jingjing.chuai@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunnychuai/mocklint/issues"
+  },
+  "homepage": "https://github.com/sunnychuai/mocklint#readme",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "glob": "^7.0.5",
+    "json5": "0.5.0",
+    "fs": "0.02"
+  },
+  "devDependencies": {
+    "ghooks": "^1.2.1"
+  }
+}

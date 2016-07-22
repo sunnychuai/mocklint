@@ -35,3 +35,15 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+.coveralls.yml
+.DS_Store
+Thumbs.db
+default/local.json
+nohup.out
+build
+dist
+.sass-cache
+.project
+.idea
+*.iml
