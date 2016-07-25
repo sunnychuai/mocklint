@@ -7,7 +7,6 @@ var fs = require('fs');
     
 function start() {
     var cwd = path.resolve(__dirname, '../../');
-    console.log('files', process.argv.slice(2));
     process.argv.slice(2).forEach(function(pattern) {
         glob.sync(pattern, {
             cwd: cwd,
