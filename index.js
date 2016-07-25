@@ -1,4 +1,3 @@
-var Command = require('commander').Command;
 var colors = require('colors');
 var package = require('./package.json');
 var JSON5 = require('json5');
@@ -7,41 +6,18 @@ var path = require('path');
 var fs = require('fs');
     
 function start() {
-    var program = new Command('mocklint');
-    program.version(package.version)
-        .description(package.description)
-        .usage('mocklint <file ...>')
-        .parse(process.argv);
-
-    if(!(program.args.length)) {
-        return program.help();
-    }
-
     var cwd = path.resolve(__dirname, '../../');
-
-    program.args.forEach(function(pattern) {
+    console.log('files', process.argv.slice(2));
+    process.argv.slice(2).forEach(function(pattern) {
         glob.sync(pattern, {
             cwd: cwd,
-            ignore: ['node_modules/**/*', 'build/**/*']
+            ignore: ['node_modules/**/*', 'build/**/*', 'build.js']
         }).forEach(function (filename) {
             var content = fs.readFileSync(path.join(cwd, filename), 'utf-8');
-            if(filename.endsWith('.json')){
-                try {
-                    JSON5.parse(content);
-                } catch (err) {
-                    handleError(filename, err);
-                }
-                return;
-            }
-
             try {
-                require(path.join(cwd, filename));
+                filename.endsWith('.json') ? JSON5.parse(content) : require(path.join(cwd, filename));
             } catch (err) {
-                try {
-                    eval('(' + content + ')');
-                } catch (err) {
-                    handleError(filename, err);
-                }
+                handleError(filename, err);
             }
         });
     });

@@ -13,7 +13,7 @@ npm install
 ```console
 Usage: node node_modules/mocklint/index.js <file ...>
 
-validate JSON files and  javascript files
+validate JSON files and javascript files
 
 Options:
 
@@ -27,5 +27,5 @@ Options:
 - check one or more paths
 
     ```
-    node node_modules/mocklint/index.js '*.js' '*.json'
+    node node_modules/mocklint/index.js test.js '*.js' '*.json'
     ```
