@@ -1,6 +1,6 @@
 {
   "name": "mocklint",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "validate JSON files and  javascript files",
   "main": "index.js",
   "scripts": {
@@ -25,9 +25,9 @@
   "homepage": "https://github.com/sunnychuai/mocklint#readme",
   "dependencies": {
     "colors": "^1.1.2",
-    "fs": "0.02",
+    "fs": "^0.0.2",
     "glob": "^7.0.5",
-    "json5": "0.5.0"
+    "json5": "^0.5.0"
   },
   "devDependencies": {
     "ghooks": "^1.2.1"
