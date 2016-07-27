@@ -17,6 +17,7 @@ function start() {
                 filename.endsWith('.json') ? JSON5.parse(content) : require(path.join(cwd, filename));
             } catch (err) {
                 handleError(filename, err);
+                process.exit(1);
             }
         });
     });
