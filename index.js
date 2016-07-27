@@ -4,7 +4,7 @@ var glob = require('glob');
 var path = require('path');
 var fs = require('fs');
 
-var isError = true;    
+var isError; 
 function start() {
     var cwd = path.resolve(__dirname, '../../');
     process.argv.slice(2).forEach(function(pattern) {
