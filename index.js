@@ -4,7 +4,7 @@ var glob = require('glob');
 var path = require('path');
 var fs = require('fs');
 
-var status = true;    
+var isError = true;    
 function start() {
     var cwd = path.resolve(__dirname, '../../');
     process.argv.slice(2).forEach(function(pattern) {
@@ -19,15 +19,13 @@ function start() {
                 handleError(filename, err);
             }
         });
-        if(!status){
-            process.exit(1);
-        }
     });
+    isError && process.exit(1);
 }
 
 function handleError(filename, err) {
     console.error(colors.yellow.underline(filename) + '\n' + colors.red(err.message) + '\n');
-    status = false;
+    isError = true;
 }
 
 start();
