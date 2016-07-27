@@ -11,8 +11,6 @@ npm install
 ## Usage
 
 ```console
-Usage: node node_modules/mocklint/index.js <file ...>
-
-node node_modules/mocklint/index.js '*.js' '**/*.json'
+node node_modules/mocklint/index.js <file ...>
 
 ```

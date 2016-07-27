@@ -1,7 +1,7 @@
 {
   "name": "mocklint",
   "version": "0.1.1",
-  "description": "validate JSON files and  javascript files",
+  "description": "validate JSON files and javascript files",
   "main": "index.js",
   "scripts": {
     "eslint": "files=`git diff --staged --name-only --diff-filter=ACMRTU | grep -ie '\\.js$'`; if [ \"${files:=empty}\" != \"empty\" ]; then eslint -c .eslintrc.json $files; fi",

@@ -1,5 +1,4 @@
 var colors = require('colors');
-var package = require('./package.json');
 var JSON5 = require('json5');
 var glob = require('glob');
 var path = require('path');
@@ -17,7 +16,6 @@ function start() {
                 filename.endsWith('.json') ? JSON5.parse(content) : require(path.join(cwd, filename));
             } catch (err) {
                 handleError(filename, err);
-                process.exit(1);
             }
         });
     });
@@ -25,6 +23,7 @@ function start() {
 
 function handleError(filename, err) {
     console.error(colors.yellow.underline(filename) + '\n' + colors.red(err.message) + '\n');
+    process.exit(1);
 }
 
 start();
