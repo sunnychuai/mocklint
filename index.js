@@ -3,7 +3,8 @@ var JSON5 = require('json5');
 var glob = require('glob');
 var path = require('path');
 var fs = require('fs');
-    
+
+var isError;    
 function start() {
     var cwd = path.resolve(__dirname, '../../');
     process.argv.slice(2).forEach(function(pattern) {
@@ -19,11 +20,12 @@ function start() {
             }
         });
     });
+    isError && process.exit(1);
 }
 
 function handleError(filename, err) {
     console.error(colors.yellow.underline(filename) + '\n' + colors.red(err.message) + '\n');
-    process.exit(1);
+    isError = true;
 }
 
 start();
