@@ -12,10 +12,9 @@
     "url": "git+https://github.com/sunnychuai/mocklint.git"
   },
   "keywords": [
-    "check",
     "validate",
-    "filename",
-    "pathname"
+    "JSON",
+    "JS"
   ],
   "author": "sunnychuai <jingjing.chuai@gmail.com>",
   "license": "ISC",
