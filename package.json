@@ -24,7 +24,7 @@
   "homepage": "https://github.com/sunnychuai/mocklint#readme",
   "dependencies": {
     "colors": "^1.1.2",
-    "glob": "^7.0.5",
+    "glob": "^7.0.6",
     "json5": "^0.5.0"
   },
   "devDependencies": {
