@@ -25,7 +25,7 @@
   "dependencies": {
     "colors": "^1.1.2",
     "glob": "^7.0.5",
-    "json5": "^0.5.0"
+    "json5": "^0.5.1"
   },
   "devDependencies": {
     "ghooks": "^1.2.1"
